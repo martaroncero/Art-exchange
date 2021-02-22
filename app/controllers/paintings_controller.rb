@@ -1,5 +1,5 @@
 class PaintingsController < ApplicationController
-before_action :set_painting, only: [:show]
+before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
 def index
     @paintings = Painting.all
