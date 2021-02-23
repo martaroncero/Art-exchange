@@ -18,17 +18,20 @@ if Rails.env.development?
   # owns a painting and leases out another
   user_both = User.create!(email: "both@test.com", password: "123456")
 
-  # user_owner = User.find(1)
-  # user_rentee = User.find(2) 
-  # user_both =  User.find(3)
+  # user_owner = User.find_by(email: "owner@test.com")
+  # user_rentee = User.find_by(email: "rentee@test.com")
+  # user_both =  User.find_by(email: "both@test.com")
 
-  oil_painting = Painting.create!(title: "My fancy art", type: "Oil", price_cents_per_day: 2000, width: 100, height: 70, location: "Somewhere in London", user: user_owner)
-  acrylic_painting = Painting.create!(title: "Abstract art", type: "Acrylic", price_cents_per_day: 500, width: 40, height: 50, location: "Center in London", user: user_both)
+  oil_painting = Painting.create!(title: "My fancy art", category: "Oil", price_cents_per_day: 2000, width: 100, height: 70, location: "Somewhere in London", user: user_owner)
+  acrylic_painting = Painting.create!(title: "Abstract art", category: "Acrylic", price_cents_per_day: 500, width: 40, height: 50, location: "Center in London", user: user_both)
 
   # User getting the painting: user_rentee (2). Owner of painting: user_both (3)
   Booking.create!(start_date: Date.today, end_date: Date.today + 10, user_id: user_rentee.id, painting_id: acrylic_painting.id)
   # User getting the painting: user_both (3). Owner of painting: user_owner (1)
   Booking.create!(start_date: Date.today + 2, end_date: Date.today + 12, user_id: user_both.id, painting_id: oil_painting.id)
 
-  puts "Seeds created"
+  puts "Seeds created:"
+  puts "- 3 new Users"
+  puts "- 2 new Paintings"
+  puts "- 2 new Bookings"
 end
