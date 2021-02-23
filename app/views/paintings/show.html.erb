@@ -1,0 +1,5 @@
+<%= @painting.name %>
+<% @painting.each do |painting| %>
+  <%= painting.title %><%= painting.type %>
+<% end %>
+<%= link_to "add painting", new_painting_path(@painting) %>
