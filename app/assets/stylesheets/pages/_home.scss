@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+.carousel-item {
+  text-align: center;
+  img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
