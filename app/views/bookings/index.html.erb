@@ -1,0 +1,16 @@
+<h1>All your bookings</h1>
+
+  <br>
+
+  <div id = 'container'>
+  <ul>
+  <%# <%= render  @bookings %> %>
+  <%= @bookings.each do |booking| %>
+     <li><%= link_to "#{booking.painting.title}- #{booking.start_date} | #{booking.end_date}", booking_path(booking) %> </li>
+     <% end %>
+     </ul>
+    </div>
+
+
+    <br>
+  <%= link_to "Back", paintings_path %>
