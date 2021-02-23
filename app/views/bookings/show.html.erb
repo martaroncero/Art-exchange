@@ -1,5 +1,18 @@
+<div class="container">
 <h2>Your booking </h2>
+<br>
+<ul>
+<h3><b><%= @booking.painting.title %></b></h3>
+<li>Category: <em><%=  @painting.category  %> </em> </li>
+ <br> 
+ <li>Start date:<%= @booking.start_date %>   End date: <%= @booking.end_date %></li> 
+</ul>
+<br>
 
-<h1><b><%= @booking.painting.title %></b></h1>
-
+<br>
 <%= link_to "back to all bookings", bookings_path %>
+</div>
+
+
+<%# Start date:<%= @booking.start_date.strftime(%d/%m%y) %> 
+ <%# <br> %> 
