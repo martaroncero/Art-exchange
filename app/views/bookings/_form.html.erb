@@ -1,0 +1,5 @@
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :start_date, autofocus: true %>
+  <%= f.input :end_date %>
+  <%= f.submit "Create booking", class: "btn btn-primary" %>
+<% end %>
