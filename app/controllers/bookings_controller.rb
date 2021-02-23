@@ -21,11 +21,12 @@ class BookingsController < ApplicationController
   def index
     @user = current_user
     @bookings = @user.bookings
-    @bookings_through_paintings = @user.paintings_bookings
+    @bookings_through_paintings = @user.painting_bookings
   end
 
   def show
-    @booking = @user.bookings.find(params[:id])
+    @booking = Booking.find(params[:id])
+    @painting = @booking.painting
   end
 
   private

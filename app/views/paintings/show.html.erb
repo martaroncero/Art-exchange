@@ -1,6 +1,36 @@
 <h1>Paintings</h1>
-<%= @painting.name %>
-<% @painting.each do |painting| %>
-  <%= painting.title %><%= painting.category %>
-<% end %>
+
+<br>
+
+<div id = 'containter'>
+<%= "#{@painting.title}" %>
+</div>
+
+<div id = 'containter'>
+<%= "#{@painting.description}" %>
+</div>
+
+
+<div class="card" style="width: 18rem;">
+<%= cl_image_tag @painting.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-body">
+    <h5 class="card-title"><%= "#{@painting.title}" %></h5>
+    <p class="card-text"><%= "#{@painting.description}" %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= "#{@painting.category}" %></li>
+    <li class="list-group-item"><%= "#{@painting.price_cents_per_day}" %></li>
+    <li class="list-group-item"><%= "#{@painting.location}" %></li>
+  </ul>
+  <div class="card-body">
+   <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", painting_path(@painting),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+  </div>
+</div>
+
+<br>
 <%= link_to "Back", painting_path %>
