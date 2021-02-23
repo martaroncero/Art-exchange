@@ -9,8 +9,6 @@ class BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params)
     booking.painting = @painting
-    p current_user
-    raise
     booking.user = current_user
 
     if booking.save
