@@ -10,9 +10,6 @@
 <%= "#{@painting.description}" %>
 </div>
 
-<br>
-<%= link_to "Back", painting_path %>
-
 
 <div class="card" style="width: 18rem;">
 <%= cl_image_tag @painting.photo.key, height: 300, width: 400, crop: :fill %>
@@ -34,3 +31,6 @@
             %>
   </div>
 </div>
+
+<br>
+<%= link_to "Back", painting_path %>
