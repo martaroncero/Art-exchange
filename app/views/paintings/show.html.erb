@@ -1,0 +1,6 @@
+<h1>Paintings</h1>
+<%= @painting.name %>
+<% @painting.each do |painting| %>
+  <%= painting.title %><%= painting.category %>
+<% end %>
+<%= link_to "Back", painting_path %>
