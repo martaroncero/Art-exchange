@@ -1,3 +1,10 @@
-<h1>Painting</h1>
+<h1 Painting >
+     <ul class="list-group">
+        <% @paintings.each do |painting| %>
+        <li class="list-group-item">
+            <%= link_to painting.title, painting_path(painting) %>
+          </li>
+        <% end %>
 
 
+   <%= link_to "Add a new Painting", new_painting_path, class: 'btn btn-primary' %>
