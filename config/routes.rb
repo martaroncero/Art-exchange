@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :paintings do
-    resources :bookings, only: [:new]
+    resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: [:index, :create, :destroy]
+  resources :bookings, only: [:index, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
