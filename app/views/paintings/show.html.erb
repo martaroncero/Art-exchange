@@ -1,6 +1,13 @@
 <h1>Paintings</h1>
+
+<br>
+
+<div id = 'containter'>
 <%= @painting.name %>
 <% @painting.each do |painting| %>
   <%= painting.title %><%= painting.category %>
 <% end %>
+</div>
+
+<br>
 <%= link_to "Back", painting_path %>
