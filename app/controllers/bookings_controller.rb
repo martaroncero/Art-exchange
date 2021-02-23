@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  
   before_action :set_painting, only: [:new, :create]
 
   def new
@@ -16,6 +16,16 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    @user = current_user
+    @bookings = @user.bookings
+    @bookings_through_paintings = @user.paintings_bookings
+  end
+
+  def show
+    @booking = @user.bookings.find(params[:id])
   end
 
   private
