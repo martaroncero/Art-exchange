@@ -15,7 +15,7 @@
 
 
 <div class="card" style="width: 18rem;">
-  <img src="https://www.eurotimes.org/wp-content/uploads/2020/03/mona-lisa-with-face-mask-3957982-e1584612250409-1024x717.jpg" class="card-img-top" alt="mona lisa mask">
+<%= cl_image_tag @painting.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"><%= "#{@painting.title}" %></h5>
     <p class="card-text"><%= "#{@painting.description}" %></p>
