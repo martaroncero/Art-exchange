@@ -41,8 +41,7 @@ class PaintingsController < ApplicationController
   private
 
   def painting_params
-    params.require(:painting).permit(:title, :type, :height, :width, :price_cents_per_day, :location, :description, :photo)
-
+    params.require(:painting).permit(:title, :category, :height, :width, :price_cents_per_day, :location, :description, :photo)
   end
 
   def set_painting
