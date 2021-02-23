@@ -14,7 +14,7 @@ class PaintingsController < ApplicationController
 
   def create
     @painting = Painting.new(painting_params)
-  
+    @painting.user = current_user
     if @painting.save
       redirect_to painting_path(@painting)
     else
@@ -26,19 +26,22 @@ class PaintingsController < ApplicationController
   end
 
   def update
-    @painting.update(painting_params)
+   if @painting.update(painting_params)
     redirect_to painting_path(@painting)
+   else
+     render :edit
+    end
   end
 
   def destroy
     @painting.destroy
     redirect_to paintings_path
   end
-  
+
   private
- 
+
   def painting_params
-    params.require(:painting).permit(:title, :type, :height, :width, :price_cents_per_day, :location, :description)
+    params.require(:painting).permit(:title, :category, :height, :width, :price_cents_per_day, :location, :description, :photo)
   end
 
   def set_painting
