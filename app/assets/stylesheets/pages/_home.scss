@@ -28,24 +28,6 @@
     height: 600px;
   }
 }
-.card-container {
-  margin-top: 60px;
-  
-  .card a {
-    text-decoration: none;
-    color: #000;
-    margin: 0 auto;
-
-    .card-body {
-      min-height: 100px;
-    }
-
-    &:hover {
-      color: #000;
-      text-decoration: underline;
-    }
-  }
-}
 .carousel-item {
   text-align: center;
   img {
