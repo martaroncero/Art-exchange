@@ -4,7 +4,7 @@
       <h5 class="card-title mb-4"><%= @painting.title %></h5>
 
       <% if @painting.photo.attached? %>
-        <%= cl_image_tag @painting.photo %>
+        <%= cl_image_tag @painting.photo.key %>
       <% end %>
 
       <p class="card-text mt-4"><%= @painting.description %></p>
