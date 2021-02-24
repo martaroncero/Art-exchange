@@ -17,3 +17,23 @@
 .renter-wrap:hover h3, .renter-card:hover p {
   text-decoration: underline;
 }
+#home-banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+
+  background-position: 25% 25%;
+  background-size: cover;
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg);
+  h2 {
+    position: absolute;
+    top: 40px;
+    left: 65px;
+    color: #fff;
+  }
+}
