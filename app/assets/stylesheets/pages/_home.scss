@@ -9,7 +9,21 @@
 }
 .card-container {
   margin-top: 60px;
+  
+  .card {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
 }
+
+
+
+
+
 #renter-container-link, #renter-container-link:hover {
   text-decoration: none;
   color: #000;
