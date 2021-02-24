@@ -15,9 +15,11 @@ class PaintingsController < ApplicationController
   def create
     @painting = Painting.new(painting_params)
     @painting.user = current_user
+
     if @painting.save
       redirect_to painting_path(@painting)
     else
+
       render :new
     end
   end
@@ -26,6 +28,7 @@ class PaintingsController < ApplicationController
   end
 
   def update
+    raise
    if @painting.update(painting_params)
     redirect_to painting_path(@painting)
    else
