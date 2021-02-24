@@ -1,24 +1,24 @@
 <div class="container mt-4">
   <h1>All your bookings</h1>
     <div>
-    <ul class="mt-4">
+    <ul class="list-group mt-4">
       <h4>Your booked paintings</h4>
       <% @bookings.each do |booking| %>
-        <li>
+        <li class="list-group-item mt-1">
           <%= link_to "#{booking.painting.title}- #{booking.start_date} | #{booking.end_date}", booking_path(booking) %>
         </li>
       <% end %>
     </ul>
-    <ul class="mt-4">
+    <ul class="list-group mt-4">
       <h4>Bookings for your paintings</h4>
       <% @bookings_through_paintings.each do |booking| %>
-        <li>
+        <li class="list-group-item mt-1">
           <%= link_to "#{booking.painting.title}- #{booking.start_date} | #{booking.end_date}", booking_path(booking) %>
         </li>
       <% end %>
     </ul>
   </div>
 
-  <%= link_to "Back to all paintings", paintings_path, class: "btn btn-primary" %>
+  <%= link_to "Back to all paintings", paintings_path, class: "btn btn-primary mt-2" %>
 
 </div>
