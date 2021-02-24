@@ -3,6 +3,23 @@
 </div>
 
 <div class="container mt-4">
+  <div class="card-container">
+    <h3>Paintings near you</h3>
+    <div class="row">
+      <% @random_paintings.each do |painting| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%# cl_image_path(painting.photo.key) %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= painting.title %></h5>
+              <p class="card-text"><%= "#{painting.category} painting. (#{painting.width}x#{painting.height}cm)" %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <div class="home-carousel-wrap mt-4">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -41,23 +58,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
-  </div>
-
-  <div class="card-container">
-    <h3>Paintings near you</h3>
-    <div class="row">
-      <% @random_paintings.each do |painting| %>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<%# cl_image_path(painting.photo.key) %>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= painting.title %></h5>
-              <p class="card-text"><%= "#{painting.category} painting. (#{painting.width}x#{painting.height}cm)" %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
     </div>
   </div>
 
