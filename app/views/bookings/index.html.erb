@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-4">
   <h1>All your bookings</h1>
     <div>
-    <ul>
+    <ul class="mt-4">
       <h4>Your booked paintings</h4>
       <% @bookings.each do |booking| %>
         <li>
@@ -9,7 +9,7 @@
         </li>
       <% end %>
     </ul>
-    <ul>
+    <ul class="mt-4">
       <h4>Bookings for your paintings</h4>
       <% @bookings_through_paintings.each do |booking| %>
         <li>
