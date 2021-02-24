@@ -1,14 +1,13 @@
-<h1>All Paintings</h1>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-    <div class="card">
-     <ul class="list-group">
-        <% @paintings.each do |painting| %>
-        <li class="list-group-item">
-            <%= link_to painting.title, painting_path(painting) %>
-          </li>
-        <% end %>
+<div class="container">
 
+
+    <div class="card-container">
+        <% @paintings.each do |painting| %>
+        <div class="painting-card">
+            <%= link_to painting.title, painting_path(painting) %>
+          </div>
+        <% end %>
+    </div>
 <br>
 
 
