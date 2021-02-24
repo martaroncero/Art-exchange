@@ -3,6 +3,10 @@
   <div id="bookings-container">
     <ul class="list-group mt-4">
       <h4>Your booked paintings</h4>
+      <div class="d-flex justify-content-between">
+        <div class="px-4">Painting Title</div>
+        <div class="px-4">Start & End Date</div>
+      </div>
       <% @bookings.each do |booking| %>
         <%= link_to booking_path(booking) do %>
         <li class="list-group-item d-flex justify-content-between mt-1">
@@ -18,6 +22,10 @@
     </ul>
     <ul class="list-group mt-4">
       <h4>Bookings for your paintings</h4>
+      <div class="d-flex justify-content-between">
+        <div class="px-4">Painting Title</div>
+        <div class="px-4">Start & End Date</div>
+      </div>
       <% @bookings_through_paintings.each do |booking| %>
         <%= link_to booking_path(booking) do %>
         <li class="list-group-item d-flex justify-content-between mt-1">
