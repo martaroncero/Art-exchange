@@ -9,6 +9,13 @@
   <div>
   <%= "#{@painting.description}" %>
   </div> -->
+     <div class="card-body">
+     <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
+              <%= link_to "Remove", painting_path(@painting),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  class: 'ml-3 text-danger'
+              %>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -38,13 +45,7 @@
       <li class="list-group-item"><%= "#{@painting.price_cents_per_day}" %></li>
       <li class="list-group-item"><%= "#{@painting.location}" %></li>
     </ul>
-    <div class="card-body">
-     <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
-              <%= link_to "Remove", painting_path(@painting),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" },
-                  class: 'ml-3 text-danger'
-              %>
+
     </div>
   </div>
 
