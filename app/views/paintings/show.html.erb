@@ -26,5 +26,11 @@
       </div>
     </div>
   </div>
-  <%= link_to "Book this painting", new_painting_booking_path(@painting), class: "btn btn-primary my-4" %>
+
+    <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModalCenter">
+    Book this painting
+  </button>
 </div>
+
+<%= render 'shared/booking-form' %>
