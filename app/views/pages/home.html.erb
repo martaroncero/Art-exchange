@@ -10,7 +10,14 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card mt-3">
             <%= link_to painting_path(painting) do %>
-              <img class="card-img-top" src="https://images.pexels.com/photos/4857772/pexels-photo-4857772.jpeg"<%# cl_image_path(painting.photo.key) %> alt="Card image cap">
+  
+              <% if painting.photo.attached? %>
+                <% painting_url = cl_image_path(painting.photo.key) %>
+              <% else %>
+                <% painting_url = "https://images-na.ssl-images-amazon.com/images/I/71KaNz7a4JL._AC_SL1024_.jpg" %>
+              <% end %>
+
+              <img class="card-img-top" src="<%= painting_url %>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"><%= painting.title %></h5>
                 <p class="card-text"><%= "#{painting.category} painting. (#{painting.width}x#{painting.height}cm)" %></p>
