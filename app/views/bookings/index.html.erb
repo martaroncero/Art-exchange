@@ -1,24 +1,61 @@
-<div class="container">
-<h1>All your bookings</h1>
+<div class="container my-4">
 
-  <br>
-  <div id = 'container'>
-  <ul>
-  <h4>Your booked paintings</h4>
-  <% @bookings.each do |booking| %>
-     <li><%= link_to "#{booking.painting.title}- #{booking.start_date} | #{booking.end_date}", booking_path(booking) %> </li>
-     <% end %>
-<br> 
-<br>
-<h4>Bookings for your paintings</h4>
-  <% @bookings_through_paintings.each do |booking| %>
-     <li><%= link_to "#{booking.painting.title}- #{booking.start_date} | #{booking.end_date}", booking_path(booking) %> </li>
-     <% end %>
+  <h1>Your bookings</h1>
 
-     </ul>
-    </div>
+  <div id="bookings-container">
 
+    <ul class="list-group mt-4">
+      <h4>From leasing</h4>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex">
+          <div class="px-4 ul-title-painting">Painting</div>
+          <div class="px-2">Title</div>
+        </div>
+        <div class="px-4">Start & End Date</div>
+      </div>
+      <% @bookings_through_paintings.each do |booking| %>
+        <%= link_to booking_path(booking) do %>
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
+          <div class="d-flex align-items-center">
+            <% photo_url = booking.painting.photo.attached? ? booking.painting.photo.key : "" %>
+            <div class="booking-list-item-image" style="background-image: url(<%= photo_url %>)"></div>
+            <div class="mx-3"><%= booking.painting.title %></div>
+          </div>
+          <div>
+            <%= "#{booking.start_date} - #{booking.end_date}" %>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
 
-    <br>
-  <%= link_to "  | Back to all paintings |", paintings_path %>
+    <ul class="list-group mt-4">
+      <h4>From renting</h4>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex">
+          <div class="px-4 ul-title-painting">Painting</div>
+          <div class="px-2">Title</div>
+        </div>
+        <div class="px-4">Start & End Date</div>
+      </div>
+      <% @bookings_through_paintings.each do |booking| %>
+        <%= link_to booking_path(booking) do %>
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
+          <div class="d-flex align-items-center">
+            <% photo_url = booking.painting.photo.attached? ? booking.painting.photo.key : "" %>
+            <div class="booking-list-item-image" style="background-image: url(<%= photo_url %>)"></div>
+            <div class="mx-3"><%= booking.painting.title %></div>
+          </div>
+          <div>
+            <%= "#{booking.start_date} - #{booking.end_date}" %>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+
   </div>
+
+  <%= link_to "Back to all paintings", paintings_path, class: "btn btn-primary mt-3" %>
+
+</div>
