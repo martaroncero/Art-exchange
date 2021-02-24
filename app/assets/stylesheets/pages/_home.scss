@@ -1,32 +1,3 @@
-// Specific CSS for your home-page
-.carousel-item {
-  text-align: center;
-  img {
-    height: 80vh;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-.card-container {
-  margin-top: 60px;
-  
-  .card {
-    text-decoration: none;
-    color: #000;
-    &:hover {
-      color: #000;
-      text-decoration: underline;
-    }
-  }
-}
-
-#renter-container-link, #renter-container-link:hover {
-  text-decoration: none;
-  color: #000;
-}
-.renter-card:hover p {
-  text-decoration: underline;
-}
 #home-banner {
   position: relative;
   width: 100%;
@@ -42,8 +13,47 @@
     url(https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg);
   h2 {
     position: absolute;
-    top: 40px;
-    left: 65px;
+    top: 50px;
+    left: 10%;
     color: #fff;
   }
+}
+
+@media(min-width: 1201px) {
+  #home-banner {
+    height: 500px;
+  }
+}
+@media(min-width: 1500px) {
+  #home-banner {
+    height: 600px;
+  }
+}
+
+.card-container {
+  margin-top: 60px;
+  
+  .card {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+}
+.carousel-item {
+  text-align: center;
+  img {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+#renter-container-link, #renter-container-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+.renter-card:hover p {
+  text-decoration: underline;
 }
