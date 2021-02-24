@@ -28,7 +28,6 @@ class PaintingsController < ApplicationController
   end
 
   def update
-    raise
    if @painting.update(painting_params)
     redirect_to painting_path(@painting)
    else
