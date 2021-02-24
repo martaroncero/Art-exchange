@@ -18,7 +18,6 @@
     color: #fff;
   }
 }
-
 @media(min-width: 1201px) {
   #home-banner {
     height: 500px;
@@ -29,13 +28,18 @@
     height: 600px;
   }
 }
-
 .card-container {
   margin-top: 60px;
   
-  .card {
+  .card a {
     text-decoration: none;
     color: #000;
+    margin: 0 auto;
+
+    .card-body {
+      min-height: 100px;
+    }
+
     &:hover {
       color: #000;
       text-decoration: underline;
