@@ -15,6 +15,7 @@ class PaintingsController < ApplicationController
         lng: painting.longitude,
         infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: painting })
       }
+    end  
   end
 
   def show
