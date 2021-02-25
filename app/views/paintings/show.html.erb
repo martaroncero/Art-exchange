@@ -19,7 +19,7 @@
         <li class="list-group-item"><%= "Medium: #{@painting.category}" %></li>
         <li class="list-group-item"><%= "Cost/day: €#{(@painting.price_cents_per_day / 100).to_f}" %></li>
         <li class="list-group-item"><%= "Location: #{@painting.location}" %></li>
-        <% if current_user.id == @painting.user_id %>
+        <% if current_user && current_user.id == @painting.user_id %>
         <li class="list-group-item d-flex justify-content-end">
           <div>
             <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
