@@ -1,11 +1,17 @@
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="card position-relative">
     <div class="card-body">
-      <h5 class="card-title mb-4"><%= @painting.title %></h5>
+              <div class="col text-center">
+
+      <h2 class="card-title mb-4"><%= @painting.title %></h2>
+
+      <div id="fit-image">
 
       <% if @painting.photo.attached? %>
         <%= cl_image_tag @painting.photo.key %>
       <% end %>
+    </div>
+      </div>
 
       <p class="card-text mt-4"><%= @painting.description %></p>
 
@@ -13,17 +19,19 @@
         <li class="list-group-item"><%= "Medium: #{@painting.category}" %></li>
         <li class="list-group-item"><%= "Cost/day: €#{(@painting.price_cents_per_day / 100).to_f}" %></li>
         <li class="list-group-item"><%= "Location: #{@painting.location}" %></li>
+        <% if current_user.id == @painting.user_id %>
+        <li class="list-group-item d-flex justify-content-end">
+          <div>
+            <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", painting_path(@painting),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </li>
+        <% end %>
       </ul>
-    </div>
-    <div id="painting-controls">
-      <div class="d-flex">
-        <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
-        <%= link_to "Remove", painting_path(@painting),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: 'ml-3 text-danger'
-        %>
-      </div>
     </div>
   </div>
 
@@ -31,6 +39,7 @@
   <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModalCenter">
     Book this painting
   </button>
+
 </div>
 
 <%= render 'shared/booking-form' %>
