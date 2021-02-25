@@ -10,7 +10,9 @@
 
   <h3>Paintings near you</h3>
   <%= render 'shared/painting_cards', paintings: @random_paintings %>
+     <div class="col text-center">
   <%= link_to "See all paintings", paintings_path, class: "btn btn-primary mt-3" %>
+</div>
 
   <div class="home-carousel-wrap mt-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
