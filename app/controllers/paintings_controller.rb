@@ -3,6 +3,13 @@ class PaintingsController < ApplicationController
 
   def index
     @paintings = Painting.all
+
+    @markers = @paintings.geocoded.map do |painting|
+      {
+        lat: painting.latitude,
+        lng: painting.longitude
+      }
+    end
   end
 
   def show
