@@ -1,3 +1,12 @@
+<%= form_tag paintings_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a work of art"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+                      
 <div class="container my-5">
   <h3>Paintings near you</h3>
   <%= render 'shared/painting_cards', paintings: @paintings %>
@@ -10,4 +19,4 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-</div>
+<div>
