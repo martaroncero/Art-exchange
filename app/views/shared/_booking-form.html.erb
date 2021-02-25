@@ -9,17 +9,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <%= simple_form_for [@painting, @booking], remote: true do |f| %>
       <div class="modal-body">
-        <%= simple_form_for [@painting, @booking] do |f| %>
           <%= f.input :start_date, as: :string, input_html: { type: :date, value: Date.today } %>
           <%= f.input :end_date, as: :string, input_html: { type: :date, value: Date.today } %>
-          <%= f.submit "Create booking", class: "btn btn-primary" %>
-        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= f.submit "Create booking", class: "btn btn-primary" %>
       </div>
+      <% end %>
     </div>
   </div>
 </div
