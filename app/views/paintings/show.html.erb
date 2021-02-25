@@ -13,18 +13,22 @@
         <li class="list-group-item"><%= "Medium: #{@painting.category}" %></li>
         <li class="list-group-item"><%= "Cost/day: €#{(@painting.price_cents_per_day / 100).to_f}" %></li>
         <li class="list-group-item"><%= "Location: #{@painting.location}" %></li>
+        <% if current_user.id == @painting.user_id %>
+        <li class="list-group-item d-flex justify-content-end">
+          <div>
+            <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", painting_path(@painting),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </li>
+        <% end %>
       </ul>
     </div>
-    <div id="painting-controls">
-      <div class="d-flex">
-        <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
-        <%= link_to "Remove", painting_path(@painting),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: 'ml-3 text-danger'
-        %>
-      </div>
-    </div>
   </div>
-  <%= link_to "Book this painting", new_painting_booking_path(@painting), class: "btn btn-primary my-4" %>
+    <div class="col text-center">
+    <%= link_to "Book this painting", new_painting_booking_path(@painting), class: "btn btn-primary my-4" %>
+  </div>
 </div>

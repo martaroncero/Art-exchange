@@ -1,36 +1,18 @@
-<div id="home-banner">
+<div id="art-banner">
+  <div class="container">
+  <h1>ART</h1> <br>
+  <h1>EXCHANGE</h1>
   <h2>Rent your dream painting</h2>
+  </div>
 </div>
 
-<div class="container mt-4">
-  <div class="card-container">
-    <h3>Paintings near you</h3>
-    <div class="row">
-      <% @random_paintings.each do |painting| %>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card mt-3">
-            <%= link_to painting_path(painting) do %>
-  
-              <% if painting.photo.attached? %>
-                <% painting_url = cl_image_path(painting.photo.key) %>
-              <% else %>
-                <% painting_url = "https://images-na.ssl-images-amazon.com/images/I/71KaNz7a4JL._AC_SL1024_.jpg" %>
-              <% end %>
+<div class="container mt-5">
 
-              <img class="card-img-top" src="<%= painting_url %>" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"><%= painting.title %></h5>
-                <p class="card-text"><%= "#{painting.category} painting. (#{painting.width}x#{painting.height}cm)" %></p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <%= link_to "See all paintings", paintings_path, class: "btn btn-primary mt-2" %>
-
-  </div>
+  <h3>Paintings near you</h3>
+  <%= render 'shared/painting_cards', paintings: @random_paintings %>
+     <div class="col text-center">
+  <%= link_to "See all paintings", paintings_path, class: "btn btn-primary mt-3" %>
+</div>
 
   <div class="home-carousel-wrap mt-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
