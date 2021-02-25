@@ -5,6 +5,12 @@
 .painting-card-content {
   box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.2);
 
+  img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
   &:hover {
     opacity: 0.8;
   }
