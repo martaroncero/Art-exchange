@@ -1,8 +1,8 @@
-<div class="container mt-3">
+<br><br>
+<div class="container pt-10" style="width: 50rem;">
   <div class="card position-relative">
     <div class="card-body">
       <div class="col text-center">
-       <h2 class="card-title mb-4"><%= @painting.title %></h2>
       <div id="fit-image">
       <% if @painting.photo.attached? %>
         <%= cl_image_tag @painting.photo.key %>
