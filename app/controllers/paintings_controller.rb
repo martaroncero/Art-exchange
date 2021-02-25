@@ -8,6 +8,13 @@ class PaintingsController < ApplicationController
     else
       @paintings = Painting.all
     end
+  
+    @markers = @paintings.geocoded.map do |painting|
+      {
+        lat: painting.latitude,
+        lng: painting.longitude,
+        infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: painting })
+      }
   end
 
   def show
