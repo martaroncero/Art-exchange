@@ -1,4 +1,12 @@
 <div class="container my-5">
   <h3>Paintings near you</h3>
   <%= render 'shared/painting_cards', paintings: @paintings %>
+
+
+  <!-- Map with markers -->
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
