@@ -8,7 +8,7 @@ class PaintingsController < ApplicationController
       {
         lat: painting.latitude,
         lng: painting.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { painting: painting })
+        infoWindow: render_to_string(partial: 'shared/painting_card', locals: { painting: painting })
       }
     end
   end
