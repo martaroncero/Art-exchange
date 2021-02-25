@@ -2,7 +2,12 @@ class PaintingsController < ApplicationController
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
   def index
-    @paintings = Painting.all
+    if params[:query].present?
+      params[:query].slice!("painting")
+      @paintings = Painting.search_by_title_and_description_and_category(params[:query])
+    else
+      @paintings = Painting.all
+    end
   end
 
   def show
