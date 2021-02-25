@@ -5,6 +5,10 @@
   padding: 0 !important;
 }
 .mapboxgl-popup {
+  img {
+    object-fit: contain;
+    height: auto;
+  }
   .card-body {
     padding: 10px;
 
