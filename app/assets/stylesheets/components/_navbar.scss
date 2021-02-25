@@ -2,13 +2,13 @@
   justify-content: space-between;
    background: rgba(33,33, 33, 0);
   // background-color: rgb(33, 33, 33);
-  background: linear-gradient(#030202, #0b0f30);
+  background: white;
    transition: 1s background-color ease;
   opacity: 1;
   width: auto;
 }
 .navbar-lewagon h2 {
-  color: white;
+  color: black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,24 +23,26 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
+  color: black;
     padding-top: 24px;
 }
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
-  color: white;
+  color: black;
 }
 
-// .nav-link:hover
+
 .navbar-light .navbar-nav .nav-link:hover {
   font-weight: bold;
-  color: whitesmoke;
+  color: rgb(44, 43, 43);
   opacity: 0.6;
   box-shadow: 0 0 0.7px gray;
   
 
 }
 .avatar {
-  width: 60px;
+  width: 58px;
+  height: 64px;
+  border-radius: 50%;
   padding-bottom: 6px;
   margin-bottom: 6px;
 }
