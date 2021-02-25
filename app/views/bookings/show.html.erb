@@ -1,32 +1,15 @@
-<%# <div class="container">
-<div class="card" style="width: 18rem">
-<h2>Your booking </h2>
-<br>
-<ul>
-<h3><b><%= @booking.painting.title %>
-<%# </b></h3> %>
-<%# <img src="" class="card-img-top" alt="..."> %>
-<%# <li>Category: <em><%=  @painting.category  %>
- <%# </em> </li> %>
- <%# <br> 
- <li>Start date:<%= @booking.start_date %> 
- <%# End date: <%= @booking.end_date</li>  %> 
-<%# </ul>
-<br>
-</div>
-<br>
-<%= link_to "Back to all bookings", bookings_path, class: "btn btn-primary mt-3" %>
-<%# </div>
- <%# %> 
-
-
-<%# Start date:<%= @booking.start_date.strftime(%d/%m%y) %> 
- <%# <br> %> 
-
-<div class="container-lg">
- <div class="card" style="width: 25rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
+<div class="container mt-3">
+  <div class="card position-relative">
+    <div class="card-body">
+      <div class="col text-center">
+       <h2 class="card-title mb-4"><%= @painting.title %></h2>
+      <div id="fit-image">
+      <% if @painting.photo.attached? %>
+        <%= cl_image_tag @painting.photo.key %>
+      <% end %>
+    </div>
+      </div>
+      <div class="card-body">
     <h3 class="card-title"><%= @booking.painting.title %></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -35,10 +18,13 @@
     <li class="list-group-item">Start date:<%= @booking.start_date %> </li>
     <li class="list-group-item">End date: <%= @booking.end_date %></li>
   </ul>
- 
-</div>
+    </div>
+  </div>
 
  <div class="card-body">
-   <%= link_to "Back to all bookings", bookings_path, class: "btn btn-primary mt-3" %>
+   <div class="col text-center">
+    <%= link_to "Back to all bookings", bookings_path, class: "btn btn-primary mt-3" %>
+   <div class="col text-center">
   </div>
-  </div>
+</div>
+</div>
