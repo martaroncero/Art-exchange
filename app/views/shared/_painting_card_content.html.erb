@@ -10,7 +10,12 @@
     <img class="card-img-top" src="<%= painting_url %>" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%= painting.title %></h5>
-      <p class="card-text"><%= "#{painting.category} painting. (#{painting.width}x#{painting.height}cm)" %></p>
+
+      <div class="d-flex justify-content-between">
+        <p><%= "#{painting.category} - (#{painting.width}x#{painting.height}cm)" %></p>
+        <p><%= (painting.price_cents_per_day / 100) %>€ / day</p>
+      </div>
+
     </div>
   <% end %>
 </div>
