@@ -2,7 +2,9 @@
   <div class="row">
     <% paintings.each do |painting| %>
       <div class="col-12 col-md-6 col-lg-4">
-        <%= render 'shared/painting_card', painting: painting%>
+        <div class="card mt-3">
+          <%= render 'shared/painting_card_content', painting: painting%>
+        </div>
       </div>
     <% end %>
   </div>
