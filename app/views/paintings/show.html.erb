@@ -1,11 +1,17 @@
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="card position-relative">
     <div class="card-body">
-      <h5 class="card-title mb-4"><%= @painting.title %></h5>
+              <div class="col text-center">
+
+      <h2 class="card-title mb-4"><%= @painting.title %></h2>
+
+      <div id="fit-image">
 
       <% if @painting.photo.attached? %>
         <%= cl_image_tag @painting.photo.key %>
       <% end %>
+    </div>
+      </div>
 
       <p class="card-text mt-4"><%= @painting.description %></p>
 
