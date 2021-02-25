@@ -5,5 +5,7 @@
   padding: 0 !important;
 }
 .mapboxgl-popup {
-  outline: none;
+  .card-body {
+    margin: 10px;
+  }
 }
