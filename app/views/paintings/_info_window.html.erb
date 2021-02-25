@@ -1,0 +1,8 @@
+<% if painting.photo.attached?%>
+  <%= cl_image_tag(painting.photo.key) %>
+<% else %>
+  <img src="https://picsum.photos/id/237/200/300" alt="">
+<% end %>
+<p><%= (painting.price_cents_per_day / 100).to_f %>€</p>
+<p><%= painting.title %> <%= painting.category %></p>
+<p></p>
