@@ -1,3 +1,13 @@
+<!-- [...] -->
+<%= form_tag paintings_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a work of art"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<!-- the list of paintings -->
 <div class="container my-4">
   <div class="card-container">
     <h3>Paintings near you</h3>
@@ -6,7 +16,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card mt-4">
             <%= link_to painting_path(painting) do %>
-  
+
               <% if painting.photo.attached? %>
                 <% painting_url = cl_image_path(painting.photo.key) %>
               <% else %>
@@ -26,3 +36,5 @@
     </div>
   </div>
 </div>
+
+
