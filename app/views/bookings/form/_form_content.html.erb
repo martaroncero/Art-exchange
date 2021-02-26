@@ -9,7 +9,7 @@
   <div class="modal-body">
       <%= f.input :start_date, as: :string, input_html: { type: :date } %>
       <%= f.input :end_date, as: :string, input_html: { type: :date } %>
-      <div id="booking_form_cost">
+      <div id="booking_form_cost" data-cost="<%= @painting.price_cents_per_day %>">
       </div>
   </div>
   <div class="modal-footer">

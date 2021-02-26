@@ -34,7 +34,16 @@ const updateCost = () => {
           startDateElem.classList.add("is-valid");
           endDateElem.classList.remove("is-invalid");
           endDateElem.classList.add("is-valid");
-          costElement.innerText = `Total cost: ${days}`;
+
+          let daysString = "";
+          let costPerDay = Number.parseInt(costElement.dataset.cost, 10);
+          
+          if (days === 1) {
+            daysString = "(1 day)"
+          } else {
+            daysString = `(${days} days)`
+          }
+          costElement.innerText = `Total cost: ${Math.abs(costPerDay / 100) * days}€ ${daysString}`;
         }  
       }
     }
