@@ -1,4 +1,9 @@
 <div class="container my-5">
+  <% if @query %>
+  <h1 class="mb-3">All available paintings for <%= @query %></h1>
+  <% else %>
+  <h1 class="mb-3">All available paintings</h1>
+    <% end %>
   <%= form_tag paintings_path, method: :get, class:"form-inline" do %>
     <%= text_field_tag :query,
       params[:query],

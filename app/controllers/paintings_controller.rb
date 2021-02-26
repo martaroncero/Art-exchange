@@ -2,20 +2,21 @@ class PaintingsController < ApplicationController
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      params[:query].slice!("painting")
-      @paintings = Painting.search_by_title_and_description_and_category(params[:query])
+    @query = params[:query]
+    if @query.present?
+      @query.slice!("painting")
+      @paintings = Painting.search_by_title_and_description_and_category(@query)
     else
       @paintings = Painting.all
     end
-  
+
     @markers = @paintings.geocoded.map do |painting|
       {
         lat: painting.latitude,
         lng: painting.longitude,
         infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: painting })
       }
-    end  
+    end
   end
 
   def show
