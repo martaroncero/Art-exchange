@@ -19,8 +19,6 @@ const updateCost = () => {
     const updateText = () => {
       let start = Date.parse(startDateElem.value);
       let end = Date.parse(endDateElem.value);
-      
-      console.log("keypress!", start, end)
 
       if (isNaN(start)) {
         costElement.innerText = "Your start date is an invalid date";
