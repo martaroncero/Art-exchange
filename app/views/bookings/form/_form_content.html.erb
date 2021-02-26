@@ -7,8 +7,8 @@
   </div>
   <%= simple_form_for [@painting, @booking], remote: true  do |f| %>
   <div class="modal-body">
-      <%= f.input :start_date, as: :string, input_html: { type: :date } %>
-      <%= f.input :end_date, as: :string, input_html: { type: :date } %>
+      <%= f.input :start_date, as: :date, html5: true  %>
+      <%= f.input :end_date, as: :date, html5: true  %>
       <div id="booking_form_cost" data-cost="<%= @painting.price_cents_per_day %>">
       </div>
   </div>

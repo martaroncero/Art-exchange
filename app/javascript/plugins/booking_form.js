@@ -20,6 +20,8 @@ const updateCost = () => {
       let start = Date.parse(startDateElem.value);
       let end = Date.parse(endDateElem.value);
       
+      console.log("keypress!", start, end)
+
       if (isNaN(start)) {
         costElement.innerText = "Your start date is an invalid date";
         updateValidationClass(startDateElem, false);
@@ -53,8 +55,8 @@ const updateCost = () => {
 
     startDateElem.addEventListener("click", updateText);
     endDateElem.addEventListener("click", updateText);
-    startDateElem.addEventListener("keydown", updateText);
-    endDateElem.addEventListener("keydown", updateText);
+    startDateElem.addEventListener("keyup", updateText);
+    endDateElem.addEventListener("keyup", updateText);
   }
 };
 
