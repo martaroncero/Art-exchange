@@ -20,6 +20,9 @@ class PaintingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @booking.start_date = Date.today
+    @booking.end_date = Date.today
   end
 
   def new
