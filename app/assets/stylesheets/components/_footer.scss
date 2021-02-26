@@ -1,19 +1,32 @@
-footer{
-  background-color: #fff;
-  color: rgba(33,33,33,1);
+footer {
+  background-color: rgba(33,33,33,1);
+  color: white;
   bottom: 0;
   width: 100%;
-  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  p {
-    text-align: center;
+  div {
+    padding: 20px 20px 30px 20px;
+    p {
+      text-align: center;
+      font-weight: lighter;
+      opacity: 0.95;
+      margin: 0;
+      padding: 8px 0 0 0;;
+    }
+
   }
 }
 .page-container {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+.content-container {
+  padding-bottom: 40px;
+}
+.footer-container {
+  padding: 0;
 }
