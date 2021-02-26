@@ -1,3 +1,13 @@
+const updateValidationClass = (elem, isValid) => {
+  if (isValid) {
+    elem.classList.remove("is-invalid");
+    elem.classList.add("is-valid");
+  } else {
+    elem.classList.remove("is-valid");
+    elem.classList.add("is-invalid");
+  }
+};
+
 const updateCost = () => {
   const bookingForm = document.getElementById('booking-form-content');
 
@@ -10,17 +20,6 @@ const updateCost = () => {
       let start = Date.parse(startDateElem.value);
       let end = Date.parse(endDateElem.value);
       
-
-      const updateValidationClass = (elem, isValid) => {
-        if (isValid) {
-          elem.classList.remove("is-invalid");
-          elem.classList.add("is-valid");
-        } else {
-          elem.classList.remove("is-valid");
-          elem.classList.add("is-invalid");
-        }
-      };
-
       if (isNaN(start)) {
         costElement.innerText = "Your start date is an invalid date";
         updateValidationClass(startDateElem, false);
