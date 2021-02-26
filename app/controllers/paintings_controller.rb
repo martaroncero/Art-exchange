@@ -9,6 +9,12 @@ class PaintingsController < ApplicationController
     else
       @paintings = Painting.all
     end
+  end
+
+  def show
+    @booking = Booking.new
+    @booking.start_date = Date.today
+    @booking.end_date = Date.today
 
     @markers = @paintings.geocoded.map do |painting|
       {
@@ -17,12 +23,6 @@ class PaintingsController < ApplicationController
         infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: painting })
       }
     end
-  end
-
-  def show
-    @booking = Booking.new
-    @booking.start_date = Date.today
-    @booking.end_date = Date.today
   end
 
   def new
