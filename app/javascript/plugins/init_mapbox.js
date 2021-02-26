@@ -24,7 +24,7 @@ const initMapbox = () => {
 
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({ color: "#212121" })
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup) // info window
         .addTo(map);
