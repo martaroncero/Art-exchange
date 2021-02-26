@@ -16,12 +16,12 @@ class PaintingsController < ApplicationController
     @booking.start_date = Date.today
     @booking.end_date = Date.today
 
-    @markers = @paintings.geocoded.map do |painting|
-      {
-        lat: painting.latitude,
-        lng: painting.longitude,
-        infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: painting })
-      }
+    if @painting.geocoded?
+      @marker = {
+                  lat: @painting.latitude,
+                  lng: @painting.longitude,
+                  infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: @painting })
+                }
     end
   end
 
