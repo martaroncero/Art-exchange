@@ -17,6 +17,22 @@
     }
   }
 }
+.mapboxgl-canvas {
+  width: auto !important;
+  height: 100% !important;
+}
 .mapboxgl-canvas:focus {
   outline: none;
+}
+#map {
+  position: sticky;
+  top: 0;
+  width: 50%;
+  height: auto;
+}
+
+@media(max-width: 1200px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
 }
