@@ -1,7 +1,5 @@
 <div class="container my-4">
-
   <h1>Your bookings</h1>
-
     <div id="bookings-container">
       <div class="row">
         <div class="col">
@@ -10,7 +8,7 @@
           <div class="d-flex justify-content-between">
             <div class="d-flex">
             <% if @bookings_through_paintings.empty? %>
-           No bookings for your paintings. 
+           You have not booked any paintings. 
            <% else %>
               <div class="px-4 ul-title-painting">Painting</div>
               <div class="px-2">Title</div>
@@ -22,7 +20,7 @@
             <%= link_to booking_path(booking) do %>
             <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
               <div class="d-flex align-items-center">
-              <% p booking %>
+              
                 <% photo_url = booking.painting.photo.attached? ? cl_image_path(booking.painting.photo.key) : "" %>
                 <div class="booking-list-item-image" style="background-image: url(<%= photo_url %>)"></div>
                 <div class="mx-3"><%= booking.painting.title %></div>
@@ -42,7 +40,7 @@
           <div class="d-flex justify-content-between">
             <div class="d-flex">
              <% if (@bookings.empty?) %>
-            You have no bookings.
+            No one has booked your paintings.
              <%  else %>
               <div class="px-4 ul-title-painting">Painting</div>
               <div class="px-2">Title</div>
@@ -69,11 +67,7 @@
     </div>
   </div>
 </div>
-  <div class="col text-center">
+  <div class="mt-2">
     <%= link_to "Back to all paintings", paintings_path, class: "btn btn-primary mt-3" %>
   </div>
 </div>
-
-
-<% @bookings.each do |booking|  %>
-<% end %>
