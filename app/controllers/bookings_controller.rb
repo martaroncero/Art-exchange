@@ -1,20 +1,18 @@
 class BookingsController < ApplicationController
   
-  before_action :set_painting, only: [:new, :create]
-
-  def new
-    @booking = Booking.new
-  end
+  before_action :set_painting, only: [:create]
 
   def create
-    booking = Booking.new(booking_params)
-    booking.painting = @painting
-    booking.user = current_user
+    @booking = Booking.new(booking_params)
+    @booking.painting = @painting
+    @booking.user = current_user
 
-    if booking.save
-      redirect_to booking_path(booking)
+    if @booking.save
+      redirect_to booking_path(@booking)
     else
-      render :new
+      respond_to do |format|
+        format.js { render 'bookings/form/form_reload.js.erb' }
+      end
     end
   end
 

@@ -1,25 +1,23 @@
-<div class="container mt-3">
+<br><br>
+<div class="container pt-10" style="width: 50rem;">
   <div class="card position-relative">
     <div class="card-body">
-              <div class="col text-center">
+       <div class="col text-center">
 
-      <h2 class="card-title mb-4"><%= @painting.title %></h2>
-
-      <div id="fit-image">
-
-      <% if @painting.photo.attached? %>
-        <%= cl_image_tag @painting.photo.key %>
-      <% end %>
-    </div>
+        <div id="fit-image">
+          <% if @painting.photo.attached? %>
+            <%= cl_image_tag @painting.photo.key %>
+          <% end %>
+        </div>
+        <br>
       </div>
-
+      <h2 class="card-title mb-4"><%= @painting.title %></h2>
       <p class="card-text mt-4"><%= @painting.description %></p>
-
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= "Medium: #{@painting.category}" %></li>
         <li class="list-group-item"><%= "Cost/day: €#{(@painting.price_cents_per_day / 100).to_f}" %></li>
         <li class="list-group-item"><%= "Location: #{@painting.location}" %></li>
-        <% if current_user.id == @painting.user_id %>
+        <% if current_user && current_user.id == @painting.user_id %>
         <li class="list-group-item d-flex justify-content-end">
           <div>
             <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
@@ -34,7 +32,16 @@
       </ul>
     </div>
   </div>
-    <div class="col text-center">
-    <%= link_to "Book this painting", new_painting_booking_path(@painting), class: "btn btn-primary my-4" %>
-  </div>
+
+    <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#booking-modal">
+    Book this painting
+  </button>
+
 </div>
+
+<div class="modal fade" id="booking-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <%= render 'bookings/form/form_content' %>
+  </div>
+</div
