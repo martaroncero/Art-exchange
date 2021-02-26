@@ -32,7 +32,16 @@
       </ul>
     </div>
   </div>
-    <div class="col text-center">
-    <%= link_to "Book this painting", new_painting_booking_path(@painting), class: "btn btn-primary my-4" %>
-  </div>
+
+    <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#booking-modal">
+    Book this painting
+  </button>
+
 </div>
+
+<div class="modal fade" id="booking-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <%= render 'bookings/form/form_content' %>
+  </div>
+</div
