@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
     else
       respond_to do |format|
-        format.js { render 'shared/booking_form_reload.js.erb' }
+        format.js { render 'bookings/form/form_reload.js.erb' }
       end
     end
   end
