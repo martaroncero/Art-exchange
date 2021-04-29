@@ -1,0 +1,39 @@
+<h4 class="mt-2"><%= title %></h4>
+
+<% if bookings.empty? %>
+  <p class="mt-4"><%= empty_message %></p>
+<% else %>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex">
+      <p class="mb-0 px-4 ul-title-painting">Painting</p>
+      <p class="mb-0 px-2">Title</p>
+    </div>
+
+    <p class="mb-0 px-4">Start & End Date</p>
+  </div>
+
+  <ul class="list-group mt-4">
+
+    <% bookings.each do |booking| %>
+
+      <%= link_to booking_path(booking) do %>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
+          <div class="d-flex align-items-center">
+            <% photo_url = booking.painting.photo.attached? ? cl_image_path(booking.painting.photo.key) : "" %>
+
+            <p class="booking-list-item-image mb-0" style="background-image: url(<%= photo_url %>)"></p>
+            <p class="mx-3"><%= booking.painting.title %></p>
+          </div>
+
+          <p class="mb-0"><%= "#{booking.start_date} - #{booking.end_date}" %></p>
+        </li>
+
+      <% end %>
+
+    <% end %>
+
+  </ul>
+
+<% end %>
+

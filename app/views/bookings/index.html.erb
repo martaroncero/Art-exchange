@@ -1,73 +1,23 @@
 <div class="container my-4">
   <h1>Your bookings</h1>
-    <div id="bookings-container">
-      <div class="row">
-        <div class="col">
-        <ul class="list-group mt-4">
-          <h4>Bookings for paintings:</h4>
-          <div class="d-flex justify-content-between">
-            <div class="d-flex">
-            <% if @bookings_through_paintings.empty? %>
-           You have not booked any paintings. 
-           <% else %>
-              <div class="px-4 ul-title-painting">Painting</div>
-              <div class="px-2">Title</div>
-            </div>
-            <div class="px-4">Start & End Date</div>
-          </div>
-          
-          <% @bookings_through_paintings.each do |booking| %>
-            <%= link_to booking_path(booking) do %>
-            <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
-              <div class="d-flex align-items-center">
-              
-                <% photo_url = booking.painting.photo.attached? ? cl_image_path(booking.painting.photo.key) : "" %>
-                <div class="booking-list-item-image" style="background-image: url(<%= photo_url %>)"></div>
-                <div class="mx-3"><%= booking.painting.title %></div>
-              </div>
-              <div>
-                <%= "#{booking.start_date} - #{booking.end_date}" %>
-              </div>
-            </li>
-            <% end %>
-            <% end %>
-          <% end %>
-        </ul>
+
+  <div id="bookings-container">
+    <div class="row">
+      <div class="col">
+
+        <%= render 'bookings_list', bookings:  @bookings_through_paintings, title: "Bookings for paintings:", empty_message: "You have not booked any paintings." %>
+
       </div>
-    <div class="col">
-      <ul class="list-group mt-4">
-        <h4>You have booked:</h4>
-          <div class="d-flex justify-content-between">
-            <div class="d-flex">
-             <% if (@bookings.empty?) %>
-            No one has booked your paintings.
-             <%  else %>
-              <div class="px-4 ul-title-painting">Painting</div>
-              <div class="px-2">Title</div>
-            </div>
-            <div class="px-4">Start & End Date</div>
-          </div>
-         
-          <% @bookings.each do |booking| %>
-            <%= link_to booking_path(booking) do %>
-            <li class="list-group-item d-flex justify-content-between align-items-center mt-1">
-              <div class="d-flex align-items-center">
-                 <% photo_url = booking.painting.photo.attached? ? cl_image_path(booking.painting.photo.key) : "" %>
-                <div class="booking-list-item-image" style="background-image: url(<%= photo_url %>)"></div>
-                <div class="mx-3"><%= booking.painting.title %></div>
-              </div>
-              <div>
-                <%= "#{booking.start_date} - #{booking.end_date}" %>
-              </div>
-            </li>
-            <% end %>
-          <% end %>
-          <% end %>
-      </ul>
+      <div class="col">
+
+        <%= render 'bookings_list', bookings:  @bookings, title: "You have booked:", empty_message: "No one has booked your paintings." %>
+
+      </div>
     </div>
   </div>
-</div>
+
   <div class="mt-2">
     <%= link_to "Back to all paintings", paintings_path, class: "btn btn-primary mt-3" %>
   </div>
+
 </div>
