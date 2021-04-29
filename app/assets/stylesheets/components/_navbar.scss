@@ -1,52 +1,30 @@
 .navbar-lewagon {
   justify-content: space-between;
-   background: rgba(33,33, 33, 0);
-  // background-color: rgb(33, 33, 33);
-  background: white;
-   transition: 1s background-color ease;
+  background-color: white;
+  transition: 1s background-color ease;
   opacity: 1;
   width: auto;
-}
-.navbar-lewagon h2 {
-  color: black;
-  font-family:  "Reem Kufi", "Helvetica", "sans-serif";;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 130px;
-  height: auto;
-  padding-left: 6px;
-  box-shadow:0 0 0.3 black;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: black;
-    padding-top: 24px;
-}
-.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
-  color: black;
-}
-
-
-.navbar-light .navbar-nav .nav-link:hover {
-  font-weight: bold;
-  color: rgb(44, 43, 43);
-  opacity: 0.6;
-  
-
+  .navbar-lewagon h2 {
+    color: black;
+    font-family:  "Reem Kufi", "Helvetica", "sans-serif";;
+  }
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+  .navbar-brand img {
+    width: 130px;
+    height: auto;
+    padding-left: 6px;
+    box-shadow:0 0 0.3 black;
+  }
 }
 .avatar {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  
   margin-bottom: 6px;
 }
-
 .nav-link {
   padding-right: 10px;
   margin-right: 24px;
@@ -54,14 +32,20 @@
   font-family: serif;
   font-size: 15px;
   font-weight: bold;
-  color:white;
+  color:#fff;
   font-family:  "Reem Kufi", "Helvetica", "sans-serif";
 }
-
 #navbarDropdown {
   box-shadow: 0 0 0.5px black;
   size: 20%;
-  
 }
+.nav-link {
+  color: black;
+  padding-top: 24px;
 
-
+  &:hover {
+    font-weight: bold;
+    color: rgb(44, 43, 43);
+    opacity: 0.6;
+  }
+}
