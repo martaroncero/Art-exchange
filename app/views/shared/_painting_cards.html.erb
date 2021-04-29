@@ -1,11 +1,17 @@
 <div class="painting-card-container mt-0">
   <div class="row">
+
     <% paintings.each do |painting| %>
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card mt-3" style=" height: 26rem;">
-          <%= render 'shared/painting_card_content', painting: painting%>
+
+          <%= render 'shared/painting_card_content', painting: painting %>
+
         </div>
       </div>
+
     <% end %>
+
   </div>
 </div>
