@@ -2,12 +2,18 @@
   margin-top: 60px;
 }
 
+.card .painting-card-content {
+  // make the heights consistent for multiple cards on the page
+  height: 26rem !important;
+}
+
 .painting-card-content {
-  box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.2);
+  // for paintings on their own, make the height only as big as needed
+  height: fit-content;
 
   img {
       width: 100%;
-      height: 300px;
+      height: 70%;
       object-fit: cover;
     }
 
@@ -26,8 +32,12 @@
     &:focus, .card-body:focus {
       outline: none;
     }
-    .card-body {
-      min-height: 100px;
+    .painting-card-body {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 15px 20px;
 
       p {
         margin-bottom: 0px;
