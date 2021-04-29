@@ -1,24 +1,21 @@
 .painting-card-container {
   margin-top: 60px;
 }
-
 .card .painting-card-content {
   // make the heights consistent for multiple cards on the page
   height: 26rem !important;
 }
-
 .painting-card-content {
   // for paintings on their own, make the height only as big as needed
   height: fit-content;
 
-  img {
-      width: 100%;
-      height: 70%;
-      object-fit: cover;
-    }
-
   &:hover {
     opacity: 0.8;
+  }
+  img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
   }
   a {
     text-decoration: none;
@@ -45,17 +42,8 @@
     }
   }
 }
-
-#fit-image{
-
-       img {
-      width: 100%;
-      height: 300px;
-      object-fit: contain;
-
-    }
+#fit-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
 }
-
-
-
-

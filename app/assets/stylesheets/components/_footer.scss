@@ -1,6 +1,6 @@
 footer {
   background-color: rgba(33,33,33,1);
-  color: white;
+  color: #fff;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -9,6 +9,7 @@ footer {
 
   div {
     padding: 20px 20px 30px 20px;
+
     p {
       text-align: center;
       font-weight: lighter;
@@ -16,7 +17,6 @@ footer {
       margin: 0;
       padding: 8px 0 0 0;;
     }
-
   }
 }
 .page-container {
