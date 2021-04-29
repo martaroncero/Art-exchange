@@ -17,8 +17,8 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = @user.bookings
-    @bookings_through_paintings = @user.painting_bookings
+    @bookings_on_own_paintings = @user.bookings
+    @bookings_on_other_paintings = @user.painting_bookings
   end
 
   def show

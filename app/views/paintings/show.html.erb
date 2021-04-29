@@ -1,51 +1,66 @@
 <div class="m-5">
+
   <div class="page-wrapper d-flex">
+
     <div class="container pl-0 pr-4">
       <div class="card position-relative">
         <div class="card-body">
-          <div class="col text-center">
 
+          <div class="col text-center">
             <div id="fit-image">
+
               <% if @painting.photo.attached? %>
                 <%= cl_image_tag @painting.photo.key %>
               <% end %>
+  
             </div>
-            <br>
           </div>
-          <h2 class="card-title mb-4"><%= @painting.title %></h2>
+
+          <h2 class="card-title my-4"><%= @painting.title %></h2>
           <p class="card-text mt-4"><%= @painting.description %></p>
+
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= "Medium: #{@painting.category}" %></li>
             <li class="list-group-item"><%= "Cost/day: €#{(@painting.price_cents_per_day / 100).to_f}" %></li>
             <li class="list-group-item"><%= "Location: #{@painting.location}" %></li>
+
             <% if current_user && current_user.id == @painting.user_id %>
-            <li class="list-group-item d-flex justify-content-end">
-              <div>
-                <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
-                <%= link_to "Remove", painting_path(@painting),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" },
-                    class: 'ml-3 text-danger'
-                %>
-              </div>
-            </li>
+
+              <li class="list-group-item d-flex justify-content-end">
+                <div>
+                  <%= link_to 'Edit', edit_painting_path(@painting), class: 'ml-3 text-warning' %>
+                  <%= link_to "Remove", painting_path(@painting),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: 'ml-3 text-danger' %>
+                </div>
+              </li>
+
             <% end %>
+
           </ul>
+
         </div>
       </div>
     </div>
-  <!-- Button trigger modal -->
+
     <!-- Map with markers -->
-    <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
   </div>
+
+  <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#booking-modal">
     Book this painting
   </button>
+
 </div>
 
+<!-- Hidden modal which appears in on button trigger -->
 <div class="modal fade" id="booking-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
+
     <%= render 'bookings/form/form_content' %>
+
   </div>
 </div>

@@ -1,37 +1,44 @@
+<%= simple_form_for painting do |f| %>
 
-   <%= simple_form_for painting do |f| %>
   <div class="row">
     <div class="col">
       <%= f.input :title %>
     </div>
+
     <div class="col">
       <%= f.input :category, collection: Painting::CATEGORIES %>
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group col-md-3">
       <%= f.input :width %>
     </div>
+  
     <div class="form-group col-md-3">
       <%= f.input :height %>
-
-      </select>
     </div>
+
     <div class="form-group col-md-6">
       <%= f.input :price_cents_per_day %>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
       <%= f.input :location %>
     </div>
+  
     <div class="col">
       <%= f.input :photo, as: :file %>
     </div>
   </div>
+
   <div class="form-group">
     <%= f.input :description %>
   </div>
+
   <%= f.button :submit, "Confirm", class: 'btn btn-primary' %>
-    <% end %>
+
+<% end %>
 
