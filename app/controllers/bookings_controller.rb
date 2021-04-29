@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  
   before_action :set_painting, only: [:create]
 
   def create
