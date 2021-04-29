@@ -1,3 +1,4 @@
+  
 AllCops:
   NewCops: enable
   Exclude:
@@ -36,7 +37,13 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
   Max: 120
+Metrics/MethodLength:
+  Max: 120
+Layout/LineLength:
+  Enabled: 140
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
+  Enabled: false
+Style/SymbolArray:
   Enabled: false

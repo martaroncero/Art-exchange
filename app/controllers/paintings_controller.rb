@@ -12,16 +12,17 @@ class PaintingsController < ApplicationController
   end
 
   def show
+    # for booking form, make the default dates today
     @booking = Booking.new
     @booking.start_date = Date.today
     @booking.end_date = Date.today
 
     if @painting.geocoded?
       @marker = {
-                  lat: @painting.latitude,
-                  lng: @painting.longitude,
-                  infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: @painting })
-                }
+        lat: @painting.latitude,
+        lng: @painting.longitude,
+        infoWindow: render_to_string(partial: 'shared/painting_card_content', locals: { painting: @painting })
+      }
     end
   end
 
@@ -45,10 +46,10 @@ class PaintingsController < ApplicationController
   end
 
   def update
-   if @painting.update(painting_params)
-    redirect_to painting_path(@painting)
-   else
-     render :edit
+    if @painting.update(painting_params)
+      redirect_to painting_path(@painting)
+    else
+      render :edit
     end
   end
 
