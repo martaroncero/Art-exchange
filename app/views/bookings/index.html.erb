@@ -5,12 +5,12 @@
     <div class="row">
       <div class="col">
 
-        <%= render 'bookings_list', bookings:  @bookings_through_paintings, title: "Bookings for paintings:", empty_message: "You have not booked any paintings." %>
+        <%= render 'bookings_list', bookings:  @bookings_on_other_paintings, title: "Bookings for paintings:", empty_message: "You have not booked any paintings." %>
 
       </div>
       <div class="col">
 
-        <%= render 'bookings_list', bookings:  @bookings, title: "You have booked:", empty_message: "No one has booked your paintings." %>
+        <%= render 'bookings_list', bookings:  @bookings_on_own_paintings, title: "You have booked:", empty_message: "No one has booked your paintings." %>
 
       </div>
     </div>
