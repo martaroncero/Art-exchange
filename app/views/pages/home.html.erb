@@ -1,4 +1,5 @@
 <div id="art-banner">
+
   <div class="container d-flex align-items-end flex-row bd-highlight">
     <div class="p-2 flex-fill bd-highlight">
        <h1>ART</h1> <br>
@@ -6,21 +7,23 @@
        <h2>Rent your dream painting</h2>
     </div>
   </div>
-    <br><br><br><br>
+
   <div class="col text-center">
     <div class="container">
       <%= link_to "Find your favourite painting now", paintings_path, class: "btn btn-light" %>
     </div>
   </div>
- </div>
+
+</div>
 
 <div class="container mt-5">
-
   <h3>Paintings near you</h3>
+
   <%= render 'shared/painting_cards', paintings: @random_paintings %>
-     <div class="col text-center">
-  <%= link_to "See all paintings", paintings_path, class: "btn btn-primary mt-5" %>
-</div>
+
+  <div class="col text-center">
+    <%= link_to "See all paintings", paintings_path, class: "btn btn-primary mt-5" %>
+  </div>
 
   <div class="home-carousel-wrap mt-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -29,33 +32,41 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
+
       <div class="carousel-inner">
         <div class="carousel-item active w-100">
           <img class="d-block" src="https://cdn.britannica.com/78/43678-050-F4DC8D93/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg" alt="Vincent van goth">
+
           <div class="carousel-caption d-none d-md-block">
             <h5>Vincent van gogh</h5>
             <p>The Starry Night - Oil painting landscape - 1889</p>
           </div>
         </div>
+
         <div class="carousel-item w-100">
           <img class="d-block" src="https://images-na.ssl-images-amazon.com/images/I/71KaNz7a4JL._AC_SL1024_.jpg" alt="Second slide">
+
           <div class="carousel-caption d-none d-md-block">
             <h5>Bob Ross</h5>
             <p>Mountain Retreat oil painting</p>
           </div>
         </div>
+
         <div class="carousel-item w-100">
           <img class="d-block" src="https://cdm0lfbn.cloudimg.io/v7/_origin_/image_uploader/photos/9e/original/pablo-picasso.jpg?p=large" alt="Third slide">
+
           <div class="carousel-caption d-none d-md-block">
             <h5>Pablo Picasso</h5>
             <p>Made in the 1900's</p>
           </div>
         </div>
       </div>
+  
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
+
       <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
@@ -67,26 +78,34 @@
     <h3>List your own painting</h3>
 
     <%= link_to new_painting_path, id: "renter-container-link" do %>
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <div class="renter-card">
-          <img class="card-img-top" src="https://images.pexels.com/photos/6925159/pexels-photo-6925159.jpeg" alt="Card image cap">
-          <p>Inspire others from your art</p>
+
+      <div class="row">
+
+        <div class="col-12 col-md-4">
+          <div class="renter-card">
+            <img class="card-img-top" src="https://images.pexels.com/photos/6925159/pexels-photo-6925159.jpeg" alt="Card image cap">
+            <p>Inspire others from your art</p>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="renter-card">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1543269866-487350d6fa5e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-          <p>Make money from your collection</p>
+
+        <div class="col-12 col-md-4">
+          <div class="renter-card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1543269866-487350d6fa5e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
+            <p>Make money from your collection</p>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="renter-card">
-          <img class="card-img-top" src="https://images.pexels.com/photos/4857772/pexels-photo-4857772.jpeg" alt="Card image cap">
-          <p>Free up wallspace for new art</p>
+
+        <div class="col-12 col-md-4">
+          <div class="renter-card">
+            <img class="card-img-top" src="https://images.pexels.com/photos/4857772/pexels-photo-4857772.jpeg" alt="Card image cap">
+            <p>Free up wallspace for new art</p>
+          </div>
         </div>
+
       </div>
-    </div>
+
+    <% end %>
+
   </div>
-  <% end %>
+
 </div>
